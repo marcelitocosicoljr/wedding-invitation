@@ -1,0 +1,677 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ──────────────────────────────────── */
+:root {
+  --burgundy: #800020;
+  --burgundy-dark: #6b1e2f;
+  --gold: #d4af37;
+  --gold-light: #f0d060;
+  --cream: #faf0e6;
+  --blush: #ffb6c1;
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Raleway", system-ui, sans-serif;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fefdfb;
+  color: #2d1016;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Floral background decoration */
+body::before {
+  content: "";
+  position: fixed;
+  top: -100px;
+  right: -100px;
+  width: 900px;
+  height: 900px;
+  background-image: url("/images/flower1.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -150px;
+  left: -150px;
+  width: 800px;
+  height: 800px;
+  background-image: url("/images/flower1.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+  transform: rotate(30deg) scaleX(-1);
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0810;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold), var(--burgundy));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: var(--cream);
+}
+
+/* ─── Typography Utilities ───────────────────────────────────── */
+.font-script {
+  font-family: var(--font-script);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+.font-display {
+  font-family: var(--font-display);
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* ─── Gold Text Gradient ─────────────────────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d4af37, #f0d060, #d4af37, #c5a028);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 4s ease infinite;
+}
+
+@keyframes goldShimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ─── Glassmorphism ──────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-burgundy {
+  background: rgba(128, 0, 32, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.glass-gold {
+  background: rgba(212, 175, 55, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* ─── Divider Ornament ───────────────────────────────────────── */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.6),
+    transparent
+  );
+}
+
+/* ─── Section Label ──────────────────────────────────────────── */
+.section-label {
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+}
+
+/* ─── Petal Animations ───────────────────────────────────────── */
+.petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 5;
+  will-change: transform;
+}
+
+/* ─── Smooth Scroll Sections ─────────────────────────────────── */
+section {
+  position: relative;
+}
+
+/* ─── Video Overlay ──────────────────────────────────────────── */
+.video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 4, 8, 0.3) 0%,
+    rgba(128, 0, 32, 0.1) 40%,
+    rgba(13, 4, 8, 0.7) 100%
+  );
+}
+
+/* ─── Animated border ────────────────────────────────────────── */
+.border-gold-animated {
+  position: relative;
+  overflow: hidden;
+}
+.border-gold-animated::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent)
+    border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: borderGlow 3s linear infinite;
+}
+@keyframes borderGlow {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* ─── Hover Lift ─────────────────────────────────────────────── */
+.hover-lift {
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 60px rgba(128, 0, 32, 0.2),
+    0 4px 20px rgba(212, 175, 55, 0.15);
+}
+
+/* ─── Timeline ───────────────────────────────────────────────── */
+.timeline-line {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--gold),
+    var(--burgundy),
+    var(--gold),
+    transparent
+  );
+}
+
+/* ─── RSVP Input ─────────────────────────────────────────────── */
+.rsvp-input {
+  background: rgba(250, 240, 230, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  color: var(--cream);
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+}
+.rsvp-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+.rsvp-input::placeholder {
+  color: rgba(250, 240, 230, 0.4);
+}
+
+/* ─── Button Styles ──────────────────────────────────────────── */
+.btn-burgundy {
+  background: linear-gradient(135deg, #800020, #a81744, #800020);
+  background-size: 200% 200%;
+  color: var(--gold);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+.btn-burgundy:hover {
+  background-position: right center;
+  box-shadow:
+    0 8px 25px rgba(128, 0, 32, 0.4),
+    0 4px 12px rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #d4af37, #f0d060, #c5a028);
+  background-size: 200% 200%;
+  color: #1a0810;
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+.btn-gold:hover {
+  background-position: right center;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ─── Masonry Gallery ────────────────────────────────────────── */
+.masonry-grid {
+  columns: 3 280px;
+  column-gap: 1rem;
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .masonry-grid {
+    columns: 2 160px;
+  }
+}
+
+/* ─── Lightbox override ──────────────────────────────────────── */
+.yarl__root {
+  --yarl__color_backdrop: rgba(13, 4, 8, 0.97);
+}
+
+/* ─── Number Counter ─────────────────────────────────────────── */
+.countdown-digit {
+  font-family: var(--font-serif);
+  background: linear-gradient(
+    180deg,
+    rgba(212, 175, 55, 0.15) 0%,
+    rgba(128, 0, 32, 0.2) 100%
+  );
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+/* ─── Music player ───────────────────────────────────────────── */
+.music-btn {
+  background: rgba(128, 0, 32, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.music-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transform: scale(1.1);
+}
+
+/* ─── Cursor ─────────────────────────────────────────────────── */
+.custom-cursor {
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+.custom-cursor-follower {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ─── Loading screen ─────────────────────────────────────────── */
+.loading-screen {
+  background: radial-gradient(ellipse at center, #3d0d19 0%, #0d0408 70%);
+}
+
+/* ─── Fade utilities ─────────────────────────────────────────── */
+.fade-mask-bottom {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* ─── Map container ──────────────────────────────────────────── */
+.map-container {
+  filter: grayscale(30%) sepia(20%) hue-rotate(300deg) brightness(0.8);
+  border-radius: 12px;
+}
+
+/* ─── Watercolor Background Aesthetic (White & Maroon) ────────────────────────────── */
+.watercolor-background {
+  position: relative;
+  background: linear-gradient(135deg, #fefdfb 0%, #faf7f5 50%, #f5f0ee 100%);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.watercolor-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    /* Deep maroon blotch (top-left) */
+    radial-gradient(
+      ellipse 800px 600px at -5% 15%,
+      rgba(153, 51, 76, 0.18) 0%,
+      rgba(180, 80, 110, 0.12) 25%,
+      transparent 50%
+    ),
+    /* Maroon accent (top-center) */
+    radial-gradient(
+        ellipse 900px 500px at 50% -10%,
+        rgba(180, 51, 79, 0.15) 0%,
+        rgba(200, 100, 120, 0.08) 20%,
+        transparent 45%
+      ),
+    /* Rose-red (top-right) */
+    radial-gradient(
+        ellipse 700px 550px at 105% 5%,
+        rgba(200, 80, 100, 0.14) 0%,
+        rgba(220, 100, 130, 0.08) 20%,
+        transparent 40%
+      ),
+    /* Soft maroon (center-left) */
+    radial-gradient(
+        ellipse 750px 700px at 15% 50%,
+        rgba(180, 80, 110, 0.1) 0%,
+        rgba(200, 100, 130, 0.06) 25%,
+        transparent 50%
+      ),
+    /* Burgundy accent (center) */
+    radial-gradient(
+        ellipse 850px 600px at 50% 50%,
+        rgba(160, 60, 90, 0.12) 0%,
+        rgba(180, 80, 110, 0.07) 25%,
+        transparent 55%
+      ),
+    /* Blush-pink (center-right) */
+    radial-gradient(
+        ellipse 750px 600px at 75% 48%,
+        rgba(230, 140, 160, 0.1) 0%,
+        rgba(220, 120, 150, 0.07) 20%,
+        transparent 45%
+      ),
+    /* Maroon watercolor (bottom-left) */
+    radial-gradient(
+        ellipse 800px 500px at 20% 100%,
+        rgba(180, 80, 110, 0.12) 0%,
+        rgba(200, 100, 130, 0.08) 20%,
+        transparent 50%
+      ),
+    /* Red accent (bottom-right) */
+    radial-gradient(
+        ellipse 900px 600px at 110% 105%,
+        rgba(200, 80, 100, 0.14) 0%,
+        rgba(210, 100, 120, 0.08) 20%,
+        transparent 45%
+      );
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+}
+
+.watercolor-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    /* Subtle noise texture overlay */ url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  opacity: 0.7;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* Abstract Floral SVG Background Patterns */
+.flower-bg-top-left {
+  position: fixed;
+  top: -100px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.13;
+}
+
+.flower-bg-bottom-right {
+  position: fixed;
+  bottom: -120px;
+  right: -180px;
+  width: 700px;
+  height: 700px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.12;
+}
+
+.flower-bg-center-right {
+  position: fixed;
+  top: 50%;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.09;
+  transform: translateY(-50%);
+}
+
+.flower-accent-bottom {
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.1;
+}
+
+@supports (background-attachment: local) {
+  .watercolor-background {
+    background-attachment: fixed;
+  }
+}
+
+/* ─── Text Container for Better Visibility ────────────────────── */
+.text-container {
+  background: rgba(45, 16, 22, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.text-container h1,
+.text-container h2,
+.text-container h3,
+.text-container p {
+  color: #fefdfb;
+}
+
+.text-container h1,
+.text-container h2,
+.text-container h3 {
+  color: #f0d060;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Section Content Wrapper ──────────────────────────────── */
+.section-content {
+  background: rgba(254, 253, 251, 0.95);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.section-content p {
+  color: #2d1016;
+  line-height: 1.8;
+}
+
+/* Professional Text Containers with Better Readability */
+.readable-text {
+  color: #2d1016;
+  font-weight: 500;
+}
+
+.readable-light-text {
+  color: #3a2a2a;
+  font-weight: 400;
+}
+
+.readable-accent-text {
+  color: #993344;
+  font-weight: 600;
+}
+
+/* Image Container Styles */
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(153, 51, 76, 0.08),
+    rgba(230, 160, 190, 0.08)
+  );
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.image-frame:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 20px 50px rgba(153, 51, 76, 0.2);
+  transform: translateY(-6px);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.image-frame-tall {
+  aspect-ratio: 3 / 4;
+}
+
+.image-frame-wide {
+  aspect-ratio: 16 / 10;
+}
+
+.image-frame-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Creative Gallery Grid */
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.gallery-item-large {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .gallery-item-large {
+    grid-column: span 1;
+  }
+}
