@@ -44,7 +44,7 @@ export default function DetailsPreview() {
           src="/images/wedding/flower-effects1.png"
           alt="Floral corner"
           fill
-          className="object-contain"
+          className="object-contain opacity-60"
         />
       </motion.div>
 
@@ -57,7 +57,7 @@ export default function DetailsPreview() {
           src="/images/wedding/flower-effects1.png"
           alt="Floral corner"
           fill
-          className="object-contain -rotate-90 scale-x-[-1]"
+          className="object-contain opacity-60 -rotate-90 scale-x-[-1]"
         />
       </motion.div>
 
@@ -90,7 +90,7 @@ export default function DetailsPreview() {
               type="button"
               onClick={handleDetailsClick}
               aria-label="Click here to view details"
-              className="absolute right-[14%]  -bottom-[35%] h-[72%] w-[34%] sm:right-[3%] sm:w-[30%] md:right-[0%] md:w-[58%]"
+              className="absolute right-[8%] -bottom-[30%] h-[72%] w-[34%] sm:right-[3%] sm:w-[30%] md:right-[0%] md:w-[58%]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.52 }}
@@ -101,7 +101,7 @@ export default function DetailsPreview() {
                 src="/images/wedding/clickhere1.png"
                 alt="Click here to view details"
                 fill
-                className="object-contain scale-[2]"
+                className="object-contain scale-[1.7]"
               />
             </motion.button>
           </motion.div>
@@ -122,13 +122,13 @@ export default function DetailsPreview() {
                   src="/images/wedding/us1.png"
                   alt="Marcelito and Daisy portrait one"
                   fill
-                  className="object-contain -mt-2 -ml-[60px] z-10  mt-[50px] "
+                  className="object-contain -mt-[6px] -ml-[60px] z-10  mt-[50px] "
                 />
               </div>
             </motion.div>
 
             <motion.div
-              className="relative h-[350px]  rotate-[5deg] rounded-[1.25rem]  p-3  sm:mt-10 sm:h-[700px]"
+              className="relative h-[340px]  rotate-[5deg] rounded-[1.25rem]  p-3  sm:mt-10 sm:h-[700px]"
               animate={{ y: [0, -5, 0] }}
               transition={{
                 duration: 6.6,

@@ -118,7 +118,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
         </motion.div>
 
         <motion.div
-          className="absolute -left-12 -bottom-8 h-[52vh] w-[52vh] max-h-[520px] max-w-[520px]"
+          className="absolute -left-12 -bottom-8 h-[52vh] w-[52vh] max-h-[520px] max-w-[320px]"
           animate={{ y: [0, -8, 0], opacity: [0.3, 0.38, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         >
@@ -127,12 +127,12 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Floral corner"
             fill
             priority
-            className="object-cover"
+            className="object-cover opacity-50"
           />
         </motion.div>
 
         <motion.div
-          className="absolute -top-12 -right-10 h-[56vh] w-[56vh] max-h-[560px] max-w-[560px]"
+          className="absolute -top-12 -right-10 h-[56vh]  w-[56vh] max-h-[560px] max-w-[320px]"
           animate={{ y: [0, 9, 0], opacity: [0.28, 0.36, 0.28] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
         >
@@ -141,7 +141,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Floral corner"
             fill
             priority
-            className="object-contain -rotate-90 scale-x-[-1]"
+            className="object-contain -rotate-90 opacity-50 scale-x-[-1]"
           />
         </motion.div>
       </div>
@@ -242,7 +242,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
               />
 
               <motion.div
-                className="relative mx-auto h-[320px] w-full sm:h-[420px] md:h-[560px]"
+                className="relative mx-auto h-[320px] scale-[1.1] w-full sm:h-[420px] md:h-[560px]"
                 animate={isOpened ? { scale: [1, 1.02, 1], y: [0, -3, 0] } : {}}
                 transition={{ duration: 1.6, ease: "easeOut" }}
                 onClick={handleOpen}
@@ -282,7 +282,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                     className="h-14 w-14 mt-4 -ml-5 object-contain sm:h-16 sm:w-16 md:h-[9rem] md:w-[9rem]"
                   />
                   <p
-                    className="mt-1  text-center -ml-2.5"
+                    className="mt-1  text-center -ml-3.5"
                     style={{
                       color: "#f5ddb0",
                       fontFamily: "'Cormorant Garamond', serif",
