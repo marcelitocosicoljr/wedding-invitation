@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "aos/dist/aos.css";
+import AOSInit from "@/components/AOSInit";
 
 export const metadata: Metadata = {
   title: "Marcelito & Daisy — Wedding Invitation",
@@ -36,6 +38,7 @@ export default function RootLayout({
         className="overflow-x-hidden"
         style={{ position: "relative", zIndex: 0 }}
       >
+        <AOSInit />
         {children}
       </body>
     </html>

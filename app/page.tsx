@@ -3,8 +3,10 @@
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AOS from "aos";
 import LoadingScreen from "@/components/LoadingScreen";
 import Hero from "@/components/Hero";
+import DetailsPreview from "@/components/DetailsPreview";
 import OurStory from "@/components/OurStory";
 import Gallery from "@/components/Gallery";
 import EventDetails from "@/components/EventDetails";
@@ -23,6 +25,7 @@ const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
 
 const SECTIONS = [
   { name: "hero", component: Hero },
+  { name: "details-preview", component: DetailsPreview },
   { name: "countdown", component: Countdown },
   { name: "story", component: OurStory },
   { name: "gallery", component: Gallery },
@@ -35,16 +38,24 @@ const SECTIONS = [
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
-  const [direction, setDirection] = useState(1);
   const [invitationOpened, setInvitationOpened] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (!mounted) return;
+
+    const rafId = requestAnimationFrame(() => {
+      AOS.refreshHard();
+    });
+
+    return () => cancelAnimationFrame(rafId);
+  }, [mounted, currentSection]);
+
   const handleOpenInvitation = () => {
     setInvitationOpened(true);
-    setDirection(1);
     setCurrentSection((prev) => Math.min(prev + 1, SECTIONS.length - 1));
   };
 
@@ -68,7 +79,7 @@ export default function Home() {
         width="0"
         height="0"
         src="https://www.youtube.com/embed/fu9yk7gCTbc?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-        allow="autoplay"
+        // allow="autoplay"
         style={{ display: "none" }}
       />
 
@@ -338,65 +349,95 @@ export default function Home() {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSection}
-            initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="relative z-10 w-full h-screen flex items-center justify-center overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.75, ease: "easeInOut" }}
+            className={`relative z-10 flex h-screen w-full justify-center overflow-x-hidden ${
+              SECTIONS[currentSection].component === DetailsPreview
+                ? "items-start overflow-y-hidden"
+                : "items-center overflow-y-auto"
+            }`}
           >
             {SECTIONS[currentSection].component === Hero && (
-              <Hero onOpenInvitation={handleOpenInvitation} />
+              <div
+                className="h-full w-full"
+                data-aos="zoom-in"
+                data-aos-delay="80"
+              >
+                <Hero onOpenInvitation={handleOpenInvitation} />
+              </div>
             )}
-            {SECTIONS[currentSection].component === Countdown && <Countdown />}
-            {SECTIONS[currentSection].component === OurStory && <OurStory />}
-            {SECTIONS[currentSection].component === Gallery && <Gallery />}
+            {SECTIONS[currentSection].component === DetailsPreview && (
+              <div className="h-full w-full overflow-hidden">
+                <DetailsPreview />
+              </div>
+            )}
+            {SECTIONS[currentSection].component === Countdown && (
+              <div
+                className="h-full w-full"
+                data-aos="fade-up"
+                data-aos-delay="80"
+              >
+                <Countdown />
+              </div>
+            )}
+            {SECTIONS[currentSection].component === OurStory && (
+              <div
+                className="h-full w-full"
+                data-aos="fade-right"
+                data-aos-delay="80"
+              >
+                <OurStory />
+              </div>
+            )}
+            {SECTIONS[currentSection].component === Gallery && (
+              <div
+                className="h-full w-full"
+                data-aos="zoom-in-up"
+                data-aos-delay="80"
+              >
+                <Gallery />
+              </div>
+            )}
             {SECTIONS[currentSection].component === EventDetails && (
-              <EventDetails />
+              <div
+                className="h-full w-full"
+                data-aos="fade-left"
+                data-aos-delay="80"
+              >
+                <EventDetails />
+              </div>
             )}
-            {SECTIONS[currentSection].component === RSVP && <RSVP />}
+            {SECTIONS[currentSection].component === RSVP && (
+              <div
+                className="h-full w-full"
+                data-aos="fade-up"
+                data-aos-delay="80"
+              >
+                <RSVP />
+              </div>
+            )}
             {SECTIONS[currentSection].component === GiftRegistry && (
-              <GiftRegistry />
+              <div
+                className="h-full w-full"
+                data-aos="flip-up"
+                data-aos-delay="80"
+              >
+                <GiftRegistry />
+              </div>
             )}
             {SECTIONS[currentSection].component === FinalMessage && (
-              <FinalMessage />
+              <div
+                className="h-full w-full"
+                data-aos="zoom-in"
+                data-aos-delay="80"
+              >
+                <FinalMessage />
+              </div>
             )}
           </motion.div>
         </AnimatePresence>
-
-        {/* Bottom Progress Indicator */}
-        <div className="fixed bottom-6 left-1/2 z-40 -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 rounded-full border border-[#f0d79a]/20 bg-[rgba(41,4,13,0.42)] px-4 py-2 backdrop-blur-sm">
-            <p
-              style={{
-                color: "#f0d79a",
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "0.85rem",
-                fontWeight: "bold",
-              }}
-            >
-              {currentSection + 1} / {SECTIONS.length}
-            </p>
-            <div className="flex gap-1.5">
-              {SECTIONS.map((_, i) => (
-                <motion.button
-                  key={i}
-                  onClick={() => {
-                    if (!invitationOpened && currentSection === 0 && i > 0)
-                      return;
-                    setDirection(i > currentSection ? 1 : -1);
-                    setCurrentSection(i);
-                  }}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    i === currentSection
-                      ? "w-7 bg-[#e1bf72]"
-                      : "w-2.5 bg-[#c88e9d] hover:bg-[#dfadc0]"
-                  }`}
-                  whileHover={{ scale: 1.15 }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
       </main>
     </>
   );

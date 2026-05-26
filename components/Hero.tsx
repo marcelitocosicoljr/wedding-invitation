@@ -76,7 +76,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Golden glow"
             fill
             priority
-            className="object-contain blur-[1px]"
+            className="object-cover blur-[1px]"
           />
         </motion.div>
 
@@ -94,7 +94,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Romantic texture"
             fill
             priority
-            className="object-contain"
+            className="object-cover"
           />
         </motion.div>
 
@@ -113,7 +113,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Romantic texture right"
             fill
             priority
-            className="object-contain rotate-180"
+            className="object-cover rotate-180"
           />
         </motion.div>
 
@@ -127,7 +127,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Floral corner"
             fill
             priority
-            className="object-contain"
+            className="object-cover"
           />
         </motion.div>
 
@@ -157,16 +157,19 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
       >
         <div className="mx-auto flex w-full max-w-[980px] flex-col items-center rounded-2xl sm:px-6 md:px-8">
           <motion.div
-            className="mb-6"
+            className="mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.85 }}
           >
             <h1
+              data-aos="fade-right"
+              data-aos-delay="180"
+              className="pt-4"
               style={{
                 fontFamily: "'Great Vibes', cursive",
                 color: "#f8e7ba",
-                fontSize: "clamp(2.6rem, 8.6vw, 4.3rem)",
+                fontSize: "clamp(2.6rem, 8.6vw, 3.3rem)",
                 lineHeight: 0.96,
                 textShadow:
                   "0 3px 14px rgba(0,0,0,0.34), 0 0 18px rgba(236, 198, 120, 0.27)",
@@ -176,7 +179,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             </h1>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className="mb-4 h-px w-[82%] max-w-[620px]"
             initial={{ opacity: 0, scaleX: 0.7 }}
             animate={{ opacity: 1, scaleX: 1 }}
@@ -185,16 +188,16 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
               background:
                 "linear-gradient(90deg, rgba(245,215,150,0), rgba(245,215,150,0.75), rgba(245,215,150,0))",
             }}
-          />
+          /> */}
 
           <motion.div
-            className="relative w-full max-w-[840px]"
+            className="relative w-full -ml-12 max-w-[980px] -mt-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.8 }}
           >
             <motion.div
-              className="relative mx-auto w-[min(92vw,680px)]"
+              className="relative mx-auto w-[min(98vw,980px)]"
               animate={{ y: [0, -6, 0] }}
               transition={{
                 duration: 4.5,
@@ -239,7 +242,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
               />
 
               <motion.div
-                className="relative mx-auto h-[235px] w-full sm:h-[310px] md:h-[360px]"
+                className="relative mx-auto h-[320px] w-full sm:h-[420px] md:h-[560px]"
                 animate={isOpened ? { scale: [1, 1.02, 1], y: [0, -3, 0] } : {}}
                 transition={{ duration: 1.6, ease: "easeOut" }}
                 onClick={handleOpen}
@@ -262,20 +265,49 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                 />
 
                 <motion.div
-                  className="absolute left-1/2 top-[56%] -translate-x-1/2 -ml-5 -translate-y-1/2 rounded-full border border-[#f2d696]/60 bg-[radial-gradient(circle,rgba(89,0,24,1)_0%,rgba(126,9,33,1)_65%,rgba(73,0,18,1)_100%)] p-2 shadow-[0_0_18px_rgba(0,0,0,0.4)]"
+                  className="absolute top-[26%] z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
+                  style={{ left: "44.2%" }}
                   animate={{
-                    scale: isOpened ? 0.82 : 1.24,
-                    opacity: isOpened ? 0.85 : 1,
+                    y: isOpened ? -10 : 0,
+                    opacity: isOpened ? 0.9 : 1,
+                    scale: isOpened ? 0.9 : 1,
                   }}
                   transition={{ duration: 0.55 }}
                 >
                   <Image
                     src="/images/marsdais.png"
-                    alt="M and D monogram seal"
-                    width={56}
-                    height={56}
-                    className="h-11 w-11  object-contain"
+                    alt="Marcelito and Daisy monogram"
+                    width={116}
+                    height={116}
+                    className="h-14 w-14 mt-4 -ml-5 object-contain sm:h-16 sm:w-16 md:h-[9rem] md:w-[9rem]"
                   />
+                  <p
+                    className="mt-1  text-center -ml-2.5"
+                    style={{
+                      color: "#f5ddb0",
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "clamp(0.45rem, 1.1vw, 0.7rem)",
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      textShadow: "0 1px 4px rgba(0,0,0,0.4)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Marcelito & Daisy
+                  </p>
+
+                  <div
+                    className="relative mt-4 -ml-4  h-10 w-10 rounded-full"
+                    style={{
+                      background:
+                        "radial-gradient(circle at 5% 5%, rgba(232,180,196,.9) 0%, #71262D 45%, #71262D 100%)",
+                      boxShadow:
+                        "0 8px 18px rgba(23, 1, 8, 0.45), inset 0 2px 6px rgba(255, 231, 200, 0.22)",
+                    }}
+                  >
+                    <span className="pointer-events-none absolute inset-[4px] rounded-full border border-[#f1d6a1]/70" />
+                    <span className="pointer-events-none absolute inset-[9px] rounded-full border border-[#e8c584]/55" />
+                  </div>
                 </motion.div>
 
                 {Array.from({ length: 7 }).map((_, idx) => (
@@ -308,31 +340,19 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                 ))}
               </motion.div>
               <p
-                className="mx-auto text-center  pl-6 mt-4"
+                data-aos="fade-right"
+                data-aos-delay="180"
+                className="mx-auto text-center -mt-4  pl-6 "
                 style={{
                   color: "#f7dfb0",
                   fontFamily: "'Great Vibes', cursive",
-                  fontSize: "clamp(1.82rem, 2.8vw, 3.08rem)",
+                  fontSize: "clamp(1.82rem, 2.0vw, 2.0rem)",
                   letterSpacing: "0.05em",
                   textShadow: "0 2px 6px rgba(0,0,0,0.3)",
                   opacity: 0.88,
                 }}
               >
-                - Marcelito & Daisy -
-              </p>
-
-              <p
-                className="mx-auto  text-center mt-4 pl-6"
-                style={{
-                  color: "#f7dfb0",
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(0.82rem, 2.8vw, 1.08rem)",
-                  letterSpacing: "0.05em",
-                  textShadow: "0 2px 6px rgba(0,0,0,0.3)",
-                  opacity: 0.88,
-                }}
-              >
-                Click the envelope to open
+                Click the seal to open...
               </p>
             </motion.div>
           </motion.div>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify/react": "^5.2.0",
+    "aos": "^2.3.4",
     "framer-motion": "^11.18.2",
     "gsap": "^3.12.7",
     "next": "^16.2.4",
@@ -19,6 +20,7 @@
     "yet-another-react-lightbox": "^3.23.3"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
