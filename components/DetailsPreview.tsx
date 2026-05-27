@@ -49,7 +49,7 @@ export default function DetailsPreview() {
       </motion.div>
 
       <motion.div
-        className="fixed -right-10 -top-12 h-[44vh] w-[44vh] max-h-[460px] max-w-[460px]"
+        className="fixed -right-10 -top-20 h-[44vh] w-[44vh] max-h-[460px] max-w-[460px]"
         animate={{ y: [0, 9, 0], opacity: [0.22, 0.32, 0.22] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -74,7 +74,7 @@ export default function DetailsPreview() {
           transition={{ duration: 0.9, delay: 0.2 }}
         >
           <motion.div
-            className="relative z-20 mx-auto h-[460px] w-full sm:h-[560px] md:h-[850px]"
+            className="relative z-20 -mt-[120px] mx-auto h-[460px] w-full sm:h-[560px] md:h-[850px]"
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -90,7 +90,7 @@ export default function DetailsPreview() {
               type="button"
               onClick={handleDetailsClick}
               aria-label="Click here to view details"
-              className="absolute right-[8%] -bottom-[30%] h-[72%] w-[34%] sm:right-[3%] sm:w-[30%] md:right-[0%] md:w-[58%]"
+              className="absolute right-[8%] -bottom-[28%] h-[72%] w-[34%] sm:right-[3%] sm:w-[30%] md:right-[0%] md:w-[58%]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.52 }}
@@ -101,7 +101,7 @@ export default function DetailsPreview() {
                 src="/images/wedding/clickhere1.png"
                 alt="Click here to view details"
                 fill
-                className="object-contain scale-[1.7]"
+                className="object-contain scale-[2]"
               />
             </motion.button>
           </motion.div>
@@ -122,13 +122,13 @@ export default function DetailsPreview() {
                   src="/images/wedding/us1.png"
                   alt="Marcelito and Daisy portrait one"
                   fill
-                  className="object-contain -mt-[6px] -ml-[60px] z-10  mt-[50px] "
+                  className="object-contain  -ml-[60px] z-10  mt-[15px] "
                 />
               </div>
             </motion.div>
 
             <motion.div
-              className="relative h-[340px]  rotate-[5deg] rounded-[1.25rem]  p-3  sm:mt-10 sm:h-[700px]"
+              className="relative h-[330px]  rotate-[5deg] rounded-[1.25rem]  p-3  sm:mt-10 sm:h-[700px]"
               animate={{ y: [0, -5, 0] }}
               transition={{
                 duration: 6.6,
@@ -138,10 +138,10 @@ export default function DetailsPreview() {
             >
               <div className="relative h-full w-full rounded-[0.85rem] ">
                 <Image
-                  src="/images/wedding/us2.png"
+                  src="/images/wedding/pogi.png"
                   alt="Marcelito and Daisy portrait two"
                   fill
-                  className="object-contain -mt-[150px] ml-[60px] z-10 "
+                  className="object-contain -mt-[135px] ml-[50px] z-10 "
                 />
               </div>
             </motion.div>
@@ -153,9 +153,9 @@ export default function DetailsPreview() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.85, ease: "easeOut" }}
           >
-            <div className="relative mt-6 overflow-hidden rounded-[1.7rem] px-5 py-8  sm:px-10 sm:py-11">
+            <div className="relative mt-12 overflow-hidden rounded-[1.7rem] px-5 py-0 pt-10  sm:px-10 sm:py-11">
               <p
-                className="text-center text-[85px]  mt-[100px]"
+                className="text-center text-[40px]  mt-[60px]"
                 style={{
                   fontFamily: "'Great Vibes', cursive",
                   lineHeight: 0.95,
@@ -163,12 +163,11 @@ export default function DetailsPreview() {
                   textShadow: "0 12px 28px rgba(37, 0, 9, 0.45)",
                 }}
               >
-                Marcelito <small className="block text-[50px] mb-4">&</small>{" "}
-                Daisy
+                Marcelito & Daisy
               </p>
 
               <p
-                className="mt-8 text-center text-[25px] text-center pl-4"
+                className="mt-4 text-center text-[18px]  text-center pl-4"
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   letterSpacing: "0.42em",
