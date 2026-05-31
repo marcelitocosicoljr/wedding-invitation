@@ -336,7 +336,7 @@ export default function DetailsPage() {
             data-aos-delay="200"
           >
             <Image
-              src="/images/wedding/final-date.png"
+              src="/images/wedding/final-date1.png"
               alt="Marcelito and Daisy moment"
               fill
               className="object-contain scale-[1]"
@@ -758,11 +758,7 @@ export default function DetailsPage() {
             />
           </motion.div>
 
-          <motion.div
-            className="relative h-[540px] w-full rounded-[1.2rem]  sm:h-96"
-            data-aos="zoom-in"
-            data-aos-delay="200"
-          >
+          <motion.div className="relative mt-10 h-[540px] w-full rounded-[1.2rem]  sm:h-96">
             <img
               src="/images/wedding/principal2.png"
               alt="Marcelito and Daisy moment"

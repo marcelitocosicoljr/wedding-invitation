@@ -19,7 +19,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
     setTimeout(() => {
       onOpenInvitation?.();
-    }, 1800);
+    }, 300);
   };
 
   return (
@@ -155,7 +155,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
       <div className="pointer-events-none absolute inset-6 z-10 rounded-md border border-[#e0b859]/25 md:inset-10" />
 
       <motion.div
-        className="relative z-20 mx-auto w-full max-w-6xl px-3 sm:px-4 md:px-8"
+        className="relative z-20 mx-auto w-full max-w-6xl px-3  -mt-[120px] sm:px-4 md:px-8"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.1, ease: "easeOut" }}
@@ -254,7 +254,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                 animate={
                   isOpened ? { scale: [1, 5.8], opacity: [1, 0.9, 0.9] } : {}
                 }
-                transition={{ duration: 3, ease: "easeInOut" }}
+                transition={{ duration: 1, ease: "easeInOut" }}
                 onClick={handleOpen}
                 role="button"
                 tabIndex={0}

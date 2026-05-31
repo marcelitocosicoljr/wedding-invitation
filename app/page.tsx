@@ -72,7 +72,7 @@ export default function Home() {
       <iframe
         width="0"
         height="0"
-        src="https://www.youtube.com/embed/fu9yk7gCTbc?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+        src="https://www.youtube.com/embed/fu9yk7gCTbc?autoplay=1&muted=1&controls=0&modestbranding=1&rel=0&showinfo=0"
         allow="autoplay"
         style={{ display: "none" }}
       />

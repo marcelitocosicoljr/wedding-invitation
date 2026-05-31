@@ -19,7 +19,7 @@ export default function DetailsPreview() {
     // Navigate after animation completes (1600ms for zoom animation + buffer)
     setTimeout(() => {
       router.push("/details");
-    }, 2500);
+    }, 1000);
   };
 
   return (
@@ -39,7 +39,7 @@ export default function DetailsPreview() {
           isOpened ? { scale: [1, 1.2], opacity: [1, 0.8, 0] } : { opacity: 1 }
         }
         transition={
-          isOpened ? { duration: 3, ease: "easeOut" } : { duration: 0 }
+          isOpened ? { duration: 1, ease: "easeOut" } : { duration: 1 }
         }
       >
         <motion.div
@@ -171,7 +171,7 @@ export default function DetailsPreview() {
               }
               transition={
                 isOpened
-                  ? { duration: 3, ease: "easeInOut" }
+                  ? { duration: 1, ease: "easeInOut" }
                   : { duration: 0.8 }
               }
               whileHover={{ scale: isOpening ? 1 : 1.02 }}
