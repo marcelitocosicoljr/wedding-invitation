@@ -336,10 +336,10 @@ export default function DetailsPage() {
             data-aos-delay="200"
           >
             <Image
-              src="/images/wedding/final-date1.png"
+              src="/images/wedding/final-date2.png"
               alt="Marcelito and Daisy moment"
               fill
-              className="object-contain scale-[1]"
+              className="object-contain scale-[1] -ml-2"
             />
           </motion.div>
 
@@ -752,7 +752,7 @@ export default function DetailsPage() {
             data-aos-delay="200"
           >
             <img
-              src="/images/wedding/principal0.png"
+              src="/images/wedding/principal-final.png"
               alt="Marcelito and Daisy moment"
               className="object-contain w-full"
             />
@@ -1659,7 +1659,6 @@ export default function DetailsPage() {
                   "04 MARS AND DAISY-8.jpg",
                   "04 MARS AND DAISY-9.jpg",
                   "05 MARS AND DAISY-4.jpg",
-                  "05 MARS AND DAISY-4 (1).jpg",
                   "05 MARS AND DAISY-6.jpg",
                   "06 MARS AND DAISY-3.jpg",
                   "06 MARS AND DAISY-6.jpg",
