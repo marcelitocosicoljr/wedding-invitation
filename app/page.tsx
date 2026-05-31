@@ -16,9 +16,6 @@ import GiftRegistry from "@/components/GiftRegistry";
 import FinalMessage from "@/components/FinalMessage";
 
 // Client-only components
-const FloatingPetals = dynamic(() => import("@/components/FloatingPetals"), {
-  ssr: false,
-});
 const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
   ssr: false,
 });
@@ -71,15 +68,12 @@ export default function Home() {
       {/* Custom cursor */}
       <CustomCursor />
 
-      {/* Floating petals */}
-      <FloatingPetals count={20} />
-
       {/* YouTube Music Autoplay */}
       <iframe
         width="0"
         height="0"
         src="https://www.youtube.com/embed/fu9yk7gCTbc?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-        // allow="autoplay"
+        allow="autoplay"
         style={{ display: "none" }}
       />
 

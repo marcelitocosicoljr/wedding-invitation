@@ -8,10 +8,11 @@ import * as React from "react";
 import { Icon } from "@iconify/react";
 
 export default function DetailsPage() {
-  const imageTopOffset = 100;
+  const imageTopOffset = 70;
   const weddingDate = new Date("2026-08-28T00:00:00").getTime();
   const [showQRCodes, setShowQRCodes] = React.useState(false);
   const [showPhotoGallery, setShowPhotoGallery] = React.useState(false);
+  const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
   const [timeLeft, setTimeLeft] = React.useState({
     days: 0,
@@ -99,11 +100,8 @@ export default function DetailsPage() {
             // height: `calc(120dvh - ${imageTopOffset}px)`,
             marginTop: `${imageTopOffset}px`,
           }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          data-aos="zoom-in"
-          data-aos-duration="1000"
+          data-aos="zoom-out"
+          data-aos-duration="2000"
         >
           <div className="relative h-full w-full">
             <div className="relative -mt-12 h-full w-full pb-20 flex justify-center items-center">
@@ -119,8 +117,8 @@ export default function DetailsPage() {
               <div className="absolute inset-x-0 -bottom-[500px] h-[100%] bg-[linear-gradient(to_bottom,rgba(91,21,25,0)_0%,rgba(91,21,25,0.25)_20%,rgba(91,21,25,1)_45%,rgba(91,21,25,1)_55%,rgba(91,21,25,0.25)_80%,rgba(91,21,25,0)_100%)]" />
               <div
                 className="  inset-0 mt-[600px] flex items-end justify-center text-center"
-                data-aos="fade-up"
-                data-aos-delay="120"
+                data-aos="zoom-out"
+                data-aos-delay="300"
               >
                 <div className=" sm:-translate-y-10">
                   <p
@@ -281,7 +279,7 @@ export default function DetailsPage() {
               </div>
             </div>
             <p
-              className="text-center italic text-3xl"
+              className="text-right -mt-4 italic text-xl"
               style={{
                 color: "#f5dfbe",
                 fontFamily: "'Great Vibes', cursive",
@@ -333,12 +331,12 @@ export default function DetailsPage() {
           transition={{ duration: 0.9, delay: 1.0, ease: "easeOut" }}
         >
           <motion.div
-            className="relative h-[400px] w-full rounded-[1.2rem]  sm:h-96"
+            className="relative h-[300px] w-full rounded-[1.2rem]  sm:h-96"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
             <Image
-              src="/images/wedding/date1.png"
+              src="/images/wedding/final-date.png"
               alt="Marcelito and Daisy moment"
               fill
               className="object-contain scale-[1]"
@@ -421,9 +419,9 @@ export default function DetailsPage() {
             >
               {[
                 "01 MARS AND DAISY-3.jpg",
-                "01 MARS AND DAISY-7.jpg",
                 "02 MARS AND DAISY-6.jpg",
-                "03 MARS AND DAISY-3.jpg",
+                "06 MARS AND DAISY-23.jpg",
+                "09 MARS AND DAISY-7.jpg",
               ].map((image, index) => (
                 <motion.div
                   key={index}
@@ -620,7 +618,7 @@ export default function DetailsPage() {
           data-aos-delay="160"
         >
           <div
-            className="relative mx-auto max-w-[900px] rounded-[2rem] border-[0.01px] py-8 px-2 sm:p-12 md:p-16"
+            className="relative mx-auto  max-w-[900px] rounded-[2rem] border-[0.01px] py-8 px-2"
             style={{
               borderColor: "#f5ddb0",
               backgroundColor: "rgba(91, 21, 25, 0.08)",
@@ -718,167 +716,17 @@ export default function DetailsPage() {
           </div>
         </motion.div>
 
-        <p
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            letterSpacing: "0.2em",
-            color: "#f5ddb0",
-            textTransform: "uppercase",
-          }}
-          className="mx-auto text-center mt-12 mb-6 text-[30px] pt-12"
-        >
-          Wedding <br /> Timeline
-        </p>
-
         <motion.div
-          className="relative mx-auto w-full max-w-[1200px] overflow-x-hidden px-4 py-8 sm:px-12"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          data-aos="fade-up"
-          data-aos-delay="260"
+          className="relative h-[500px]  w-full rounded-[1.2rem] overflow-hidden sm:h-96"
+          data-aos="zoom-in"
+          data-aos-delay="400"
         >
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 md:gap-8">
-            {/* Arrival Card */}
-            <motion.div
-              className="group relative rounded-[1.8rem] border-[0.01px] overflow-hidden p-6 sm:p-8 transition-all duration-300"
-              style={{
-                borderColor: "#f5ddb0",
-                backgroundColor: "rgba(117, 0, 25, 0.12)",
-                backdropFilter: "blur(30px)",
-                WebkitBackdropFilter: "blur(30px)",
-                boxShadow:
-                  "0 8px 32px rgba(91, 21, 25, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-              }}
-              whileHover={{ y: -8, backgroundColor: "rgba(117, 0, 25, 0.18)" }}
-              data-aos="zoom-in"
-              data-aos-delay="280"
-            >
-              <div className="relative h-32 w-32 mx-auto mb-6 sm:h-40 sm:w-40">
-                <Image
-                  src="/images/wedding/arrival.png"
-                  alt="Arrival"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <p
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  color: "#f5ddb0",
-                  fontWeight: "600",
-                }}
-                className="text-center mb-2 text-[40px]"
-              >
-                1:30 PM
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Great Vibes', cursive",
-                  color: "#f7e3c0",
-                  lineHeight: 0.95,
-                }}
-                className="text-center text-[40px] pt-4"
-              >
-                Arrival
-              </p>
-              <div className="mt-4 h-0.5 w-16 mx-auto bg-gradient-to-r from-transparent via-[#f5ddb0] to-transparent opacity-50" />
-            </motion.div>
-
-            {/* Ceremony Card */}
-            <motion.div
-              className="group relative rounded-[1.8rem] border-[0.01px] overflow-hidden p-6 sm:p-8 transition-all duration-300"
-              style={{
-                borderColor: "#f5ddb0",
-                backgroundColor: "rgba(117, 0, 25, 0.12)",
-                backdropFilter: "blur(30px)",
-                WebkitBackdropFilter: "blur(30px)",
-                boxShadow:
-                  "0 8px 32px rgba(91, 21, 25, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-              }}
-              whileHover={{ y: -8, backgroundColor: "rgba(117, 0, 25, 0.18)" }}
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <div className="relative h-32 w-32 mx-auto mb-6 sm:h-40 sm:w-40">
-                <Image
-                  src="/images/wedding/ceremony.png"
-                  alt="Ceremony"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <p
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  letterSpacing: "0.1em",
-                  color: "#f5ddb0",
-                  fontWeight: "600",
-                }}
-                className="text-center mb-2 text-[40px]"
-              >
-                2:00 PM
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Great Vibes', cursive",
-                  color: "#f7e3c0",
-                  lineHeight: 0.95,
-                }}
-                className="text-center text-[40px] pt-4"
-              >
-                Ceremony
-              </p>
-              <div className="mt-4 h-0.5 w-16 mx-auto bg-gradient-to-r from-transparent via-[#f5ddb0] to-transparent opacity-50" />
-            </motion.div>
-
-            {/* Reception Card */}
-            <motion.div
-              className="group relative rounded-[1.8rem] border-[0.01px] overflow-hidden p-6 sm:p-8 transition-all duration-300"
-              style={{
-                borderColor: "#f5ddb0",
-                backgroundColor: "rgba(117, 0, 25, 0.12)",
-                backdropFilter: "blur(30px)",
-                WebkitBackdropFilter: "blur(30px)",
-                boxShadow:
-                  "0 8px 32px rgba(91, 21, 25, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-              }}
-              whileHover={{ y: -8, backgroundColor: "rgba(117, 0, 25, 0.18)" }}
-              data-aos="zoom-in"
-              data-aos-delay="320"
-            >
-              <div className="relative h-32 w-32 mx-auto mb-6 sm:h-40 sm:w-40">
-                <Image
-                  src="/images/wedding/recept.png"
-                  alt="Reception"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <p
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  letterSpacing: "0.1em",
-                  color: "#f5ddb0",
-                  fontWeight: "600",
-                }}
-                className="text-center mb-2"
-              >
-                5:00 PM
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Great Vibes', cursive",
-                  color: "#f7e3c0",
-                  lineHeight: 0.95,
-                }}
-                className="text-center text-[40px] pt-4"
-              >
-                Reception
-              </p>
-              <div className="mt-4 h-0.5 w-16 mx-auto bg-gradient-to-r from-transparent via-[#f5ddb0] to-transparent opacity-50" />
-            </motion.div>
-          </div>
+          <Image
+            src="/images/wedding/final-timeline.png"
+            alt="Wedding story details"
+            fill
+            className="object-contain scale-[0.95] -ml-2"
+          />
         </motion.div>
 
         {/* Bridal Entourage Section */}
@@ -918,7 +766,7 @@ export default function DetailsPage() {
             <img
               src="/images/wedding/principal2.png"
               alt="Marcelito and Daisy moment"
-              className="object-contain w-full -mt-[120px]"
+              className="object-contain w-full -mt-[100px]"
             />
           </motion.div>
         </motion.div>
@@ -955,21 +803,7 @@ export default function DetailsPage() {
               fontWeight: "600",
             }}
           >
-            We Encourage You to Dress
-          </p>
-
-          <p
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
-              letterSpacing: "0.15em",
-              color: "#f5ddb0",
-              textTransform: "uppercase",
-              marginBottom: "2rem",
-              fontWeight: "600",
-            }}
-          >
-            According to Our Wedding Colors
+            We Encourage You to Dress According to Our Wedding Colors
           </p>
 
           <p
@@ -1016,6 +850,18 @@ export default function DetailsPage() {
             priority={false}
           />
         </motion.div>
+        <p
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            color: "#f5ddb0",
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+          }}
+          className="text-center px-6 text-[8px] -mt-6"
+        >
+          FRIENDLY REMINDER: <br /> PLEASE AVOID WEARING WHITE , T-SHIRTS,
+          SANDO, SHORTS AND SLIPPERS.
+        </p>
       </div>
 
       {/* Gentle Reminders Section */}
@@ -1112,6 +958,7 @@ export default function DetailsPage() {
                     lineHeight: "1.8",
                     letterSpacing: "0.05em",
                     marginBottom: "1.5rem",
+                    textAlign: "center",
                   }}
                 >
                   Your presence at our wedding is the greatest gift of all.
@@ -1206,6 +1053,7 @@ export default function DetailsPage() {
                     color: "#f5ddb0",
                     lineHeight: "1.8",
                     letterSpacing: "0.05em",
+                    textAlign: "center",
                   }}
                 >
                   Due to limited space & seating constraints, we are unable to
@@ -1283,6 +1131,7 @@ export default function DetailsPage() {
                     color: "#f5ddb0",
                     lineHeight: "1.8",
                     letterSpacing: "0.05em",
+                    textAlign: "center",
                   }}
                 >
                   We respectfully request an adults-only celebration, with the
@@ -1360,6 +1209,7 @@ export default function DetailsPage() {
                     color: "#f5ddb0",
                     lineHeight: "1.8",
                     letterSpacing: "0.05em",
+                    textAlign: "center",
                   }}
                 >
                   The ceremony begins promptly at 2PM, with the entourage walk
@@ -1438,6 +1288,7 @@ export default function DetailsPage() {
                     color: "#f5ddb0",
                     lineHeight: "1.8",
                     letterSpacing: "0.05em",
+                    textAlign: "center",
                   }}
                 >
                   Please do not eat and run. It took us months to plan our
@@ -1474,16 +1325,21 @@ export default function DetailsPage() {
             }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
           >
             We Would Love <br /> to Have You There
           </motion.p>
 
           {/* Main RSVP Button */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.5, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              delay: 0.2,
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+            }}
           >
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfoUGYXMdyd5-3uRdPco8hT9o76IGiys4mQWcpNZVo8e4R3NA/viewform?usp=dialog"
@@ -1500,7 +1356,7 @@ export default function DetailsPage() {
               }}
             >
               <motion.button
-                className="px-12 sm:px-16 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-2xl transition-all shadow-2xl"
+                className="px-12 sm:px-16 py-5 -mt-4 sm:py-6 rounded-full font-bold text-lg sm:text-2xl transition-all  shadow-2xl"
                 style={{
                   backgroundColor: "#750019",
                   color: "#f5ddb0",
@@ -1516,8 +1372,19 @@ export default function DetailsPage() {
                   backgroundColor: "#5B1519",
                   boxShadow:
                     "0 15px 50px rgba(245, 221, 176, 0.4), 0 0 80px rgba(245, 221, 176, 0.2)",
+                  letterSpacing: "0.18em",
                 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 1 }}
+                animate={{
+                  y: [0, 20, 0],
+                }}
+                transition={{
+                  y: {
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  },
+                }}
               >
                 RSVP NOW
               </motion.button>
@@ -1533,9 +1400,9 @@ export default function DetailsPage() {
               marginTop: "2rem",
               marginBottom: "1rem",
             }}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
             We Can&apos;t Wait <br /> to Celebrate with You
           </motion.p>
@@ -1552,7 +1419,7 @@ export default function DetailsPage() {
             className="px-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.85 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
             Please confirm your attendance by{" "}
             <span style={{ color: "#f5ddb0", fontWeight: "600" }}>
@@ -1773,33 +1640,72 @@ export default function DetailsPage() {
             <div className="flex-1 overflow-y-auto overflow-x-hidden w-full">
               <div className="w-full">
                 {[
+                  "01 MARS AND DAISY.jpg",
                   "01 MARS AND DAISY-3.jpg",
+                  "01 MARS AND DAISY-6.jpg",
                   "01 MARS AND DAISY-7.jpg",
+                  "01 MARS AND DAISY-8.jpg",
+                  "02 MARS AND DAISY.jpg",
+                  "02 MARS AND DAISY-2.jpg",
+                  "02 MARS AND DAISY-3.jpg",
+                  "02 MARS AND DAISY-5.jpg",
                   "02 MARS AND DAISY-6.jpg",
+                  "02 MARS AND DAISY-10.jpg",
+                  "02 MARS AND DAISY-12.jpg",
+                  "03 MARS AND DAISY.jpg",
+                  "03 MARS AND DAISY-2.jpg",
                   "03 MARS AND DAISY-3.jpg",
+                  "03 MARS AND DAISY-6.jpg",
                   "03 MARS AND DAISY-7.jpg",
+                  "04 MARS AND DAISY.jpg",
+                  "04 MARS AND DAISY-2.jpg",
                   "04 MARS AND DAISY-3.jpg",
+                  "04 MARS AND DAISY-8.jpg",
                   "04 MARS AND DAISY-9.jpg",
-                  "05 MARS AND DAISY-4 (1).jpg",
                   "05 MARS AND DAISY-4.jpg",
+                  "05 MARS AND DAISY-4 (1).jpg",
                   "05 MARS AND DAISY-6.jpg",
+                  "06 MARS AND DAISY-3.jpg",
+                  "06 MARS AND DAISY-6.jpg",
+                  "06 MARS AND DAISY-14.jpg",
+                  "06 MARS AND DAISY-17.jpg",
+                  "06 MARS AND DAISY-20.jpg",
                   "06 MARS AND DAISY-23.jpg",
                   "06 MARS AND DAISY-25.jpg",
+                  "06 MARS AND DAISY-26.jpg",
+                  "06 MARS AND DAISY-27.jpg",
+                  "07 MARS AND DAISY.jpg",
                   "07 MARS AND DAISY-18.jpg",
                   "07 MARS AND DAISY-19.jpg",
-                  "08 MARS AND DAISY-10.jpg",
+                  "08 MARS AND DAISY.jpg",
                   "08 MARS AND DAISY-2.jpg",
                   "08 MARS AND DAISY-9.jpg",
+                  "08 MARS AND DAISY-10.jpg",
+                  "08 MARS AND DAISY-11.jpg",
+                  "08 MARS AND DAISY-13.jpg",
+                  "09 MARS AND DAISY.jpg",
+                  "09 MARS AND DAISY-3.jpg",
                   "09 MARS AND DAISY-7.jpg",
+                  "09 MARS AND DAISY-8.jpg",
+                  "09 MARS AND DAISY-9.jpg",
+                  "09 MARS AND DAISY-11.jpg",
+                  "09 MARS AND DAISY-14.jpg",
+                  "10 MARS AND DAISY.jpg",
                   "11 MARS AND DAISY-2.jpg",
                   "11 MARS AND DAISY-3.jpg",
+                  "11 MARS AND DAISY-7.jpg",
+                  "12 MARS AND DAISY-8.jpg",
+                  "12 MARS AND DAISY-10.jpg",
+                  "13 MARS AND DAISY.jpg",
+                  "13 MARS AND DAISY-7.jpg",
                 ].map((image, index) => (
                   <motion.div
                     key={index}
-                    className="relative w-full"
+                    className="relative w-full cursor-pointer hover:opacity-80 transition-opacity"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: index * 0.05 }}
+                    onClick={() => setSelectedImage(image)}
                   >
                     <Image
                       src={`/images/wedding/invitation/${image}`}
@@ -1827,6 +1733,55 @@ export default function DetailsPage() {
                 Scroll to view all photos
               </p>
             </div>
+          </motion.div>
+        </motion.div>
+      )}
+
+      {/* Single Image Modal */}
+      {selectedImage && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.95)" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.div
+            className="relative w-full h-[90vh] max-w-5xl flex items-center justify-center"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <motion.button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{
+                backgroundColor: "rgba(91, 21, 25, 0.8)",
+                padding: "0.5rem",
+                borderRadius: "50%",
+                border: "2px solid #f5ddb0",
+              }}
+            >
+              <Icon
+                icon="mdi:close"
+                style={{ fontSize: "12px", color: "#f5ddb0" }}
+              />
+            </motion.button>
+
+            {/* Image */}
+            <Image
+              src={`/images/wedding/invitation/${selectedImage}`}
+              alt="Full view photo"
+              width={1400}
+              height={1000}
+              className="w-full h-full object-contain"
+              priority
+            />
           </motion.div>
         </motion.div>
       )}

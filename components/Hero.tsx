@@ -15,10 +15,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
   const handleOpen = () => {
     if (isOpening || isOpened) return;
     setIsOpening(true);
-
-    setTimeout(() => {
-      setIsOpened(true);
-    }, 650);
+    setIsOpened(true);
 
     setTimeout(() => {
       onOpenInvitation?.();
@@ -35,11 +32,11 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at 20% 15%, rgba(179, 27, 47, 0.45) 0%, rgba(86, 0, 14, 0.2) 30%, transparent 55%), radial-gradient(circle at 85% 72%, rgba(255, 178, 185, 0.2) 0%, transparent 52%), linear-gradient(145deg, #2b0008 0%, #4b000d 35%, #5a000f 58%, #2d0008 100%)",
+              "linear-gradient(145deg, #2b0008 0%, #4b000d 35%, #5a000f 58%, #2d0008 100%)",
           }}
         />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(110,0,24,0.06)_0%,rgba(20,0,4,0.46)_75%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(110,0,24,0.06)_0%,rgba(20,0,4,0.46)_75%)] hidden" />
 
         <motion.div
           className="absolute -left-16 top-10 h-64 w-64 rounded-full blur-[90px]"
@@ -48,6 +45,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             x: [0, 40, 0],
             y: [0, -25, 0],
             scale: [1, 1.18, 1],
+            opacity: isOpened ? 0 : 1,
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -58,6 +56,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             x: [0, -35, 0],
             y: [0, 28, 0],
             scale: [1, 0.9, 1],
+            opacity: isOpened ? 0 : 1,
           }}
           transition={{
             duration: 12,
@@ -68,7 +67,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
         <motion.div
           className="absolute inset-0"
-          animate={{ opacity: [0.25, 0.34, 0.25] }}
+          animate={{ opacity: isOpened ? 0 : [0.25, 0.34, 0.25] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         >
           <Image
@@ -82,9 +81,12 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
         <motion.div
           className="absolute left-0 top-0 h-full w-[200px] sm:w-[240px]"
-          animate={{ opacity: [0.12, 0.2, 0.12], scale: [1, 1.02, 1] }}
+          animate={{
+            opacity: isOpened ? 0 : [0.12, 0.2, 0.12],
+            scale: [1, 1.02, 1],
+          }}
           transition={{
-            duration: 10,
+            duration: 2,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -100,7 +102,10 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
         <motion.div
           className="absolute right-0 top-0 h-full w-[200px] sm:w-[240px]"
-          animate={{ opacity: [0.12, 0.2, 0.12], scale: [1, 1.02, 1] }}
+          animate={{
+            opacity: isOpened ? 0 : [0.12, 0.2, 0.12],
+            scale: [1, 1.02, 1],
+          }}
           transition={{
             duration: 10,
             repeat: Infinity,
@@ -119,7 +124,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
         <motion.div
           className="absolute -left-12 -bottom-8 h-[52vh] w-[52vh] max-h-[520px] max-w-[320px]"
-          animate={{ y: [0, -8, 0], opacity: [0.3, 0.38, 0.3] }}
+          animate={{ y: [0, -8, 0], opacity: isOpened ? 0 : [0.3, 0.38, 0.3] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         >
           <Image
@@ -133,7 +138,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
         <motion.div
           className="absolute -top-12 -right-10 h-[56vh]  w-[56vh] max-h-[560px] max-w-[320px]"
-          animate={{ y: [0, 9, 0], opacity: [0.28, 0.36, 0.28] }}
+          animate={{ y: [0, 9, 0], opacity: isOpened ? 0 : [0.28, 0.36, 0.28] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
         >
           <Image
@@ -211,7 +216,10 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                   background:
                     "radial-gradient(ellipse at center, rgba(255, 197, 142, 0.38) 0%, rgba(188, 40, 68, 0.24) 45%, rgba(18, 0, 5, 0) 100%)",
                 }}
-                animate={{ opacity: [0.55, 0.9, 0.55], scale: [1, 1.05, 1] }}
+                animate={{
+                  opacity: isOpened ? 0 : [0.55, 0.9, 0.55],
+                  scale: [1, 1.05, 1],
+                }}
                 transition={{
                   duration: 3.4,
                   repeat: Infinity,
@@ -243,8 +251,10 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
               <motion.div
                 className="relative mx-auto h-[320px] scale-[1.1] w-full sm:h-[420px] md:h-[560px]"
-                animate={isOpened ? { scale: [1, 1.02, 1], y: [0, -3, 0] } : {}}
-                transition={{ duration: 1.6, ease: "easeOut" }}
+                animate={
+                  isOpened ? { scale: [1, 5.8], opacity: [1, 0.9, 0.9] } : {}
+                }
+                transition={{ duration: 3, ease: "easeInOut" }}
                 onClick={handleOpen}
                 role="button"
                 tabIndex={0}
@@ -342,11 +352,11 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
               <p
                 data-aos="fade-right"
                 data-aos-delay="180"
-                className="mx-auto text-center -mt-4  pl-6 "
+                className="mx-auto text-center -mt-[83px]  pl-6 "
                 style={{
                   color: "#f7dfb0",
                   fontFamily: "'Great Vibes', cursive",
-                  fontSize: "clamp(1.82rem, 2.0vw, 2.0rem)",
+                  fontSize: "clamp(0.6rem, 2.0vw, 2.0rem)",
                   letterSpacing: "0.05em",
                   textShadow: "0 2px 6px rgba(0,0,0,0.3)",
                   opacity: 0.88,

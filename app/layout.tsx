@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "aos/dist/aos.css";
 import AOSInit from "@/components/AOSInit";
+import MobileOnlyModal from "@/components/MobileOnlyModal";
+import FloatingPetalsWrapper from "@/components/FloatingPetalsWrapper";
 
 export const metadata: Metadata = {
   title: "Marcelito & Daisy — Wedding Invitation",
@@ -39,6 +41,8 @@ export default function RootLayout({
         style={{ position: "relative", zIndex: 0 }}
       >
         <AOSInit />
+        <MobileOnlyModal />
+        <FloatingPetalsWrapper />
         {children}
       </body>
     </html>
