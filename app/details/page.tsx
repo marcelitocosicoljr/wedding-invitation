@@ -1407,23 +1407,25 @@ export default function DetailsPage() {
           <motion.p
             style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1rem, 2vw, 1.1rem)",
               color: "#f5dfbe",
               letterSpacing: "0.08em",
               opacity: 0.85,
             }}
-            className="px-6"
+            className="px-6 text-xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.85 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             Please confirm your attendance by{" "}
             <span style={{ color: "#f5ddb0", fontWeight: "600" }}>
-              June 30, 2026
+              June 20, 2026
             </span>
             <br />
             <br />
-            <span style={{ color: "#f5ddb0", fontWeight: "600" }}>
+            <span
+              style={{ color: "#f5ddb0", fontWeight: "600" }}
+              className="text-sm"
+            >
               If we will not receive a response by this date, it will be marked
               as a {'"NO"'}.
             </span>
@@ -1440,7 +1442,7 @@ export default function DetailsPage() {
         data-aos="zoom-in"
         data-aos-delay="100"
       >
-        <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mb-6">
+        <div className="relative w-20 h-20 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mb-6">
           <Image
             src="/images/marsdais.png"
             alt="Marcelito & Daisy Monogram"

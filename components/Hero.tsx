@@ -271,7 +271,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                   alt="Envelope"
                   fill
                   priority
-                  className="object-cover"
+                  className="object-cover scale-[1.1]"
                 />
 
                 <motion.div
