@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import AOSInit from "@/components/AOSInit";
 import MobileOnlyModal from "@/components/MobileOnlyModal";
 import FloatingPetalsWrapper from "@/components/FloatingPetalsWrapper";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export const metadata: Metadata = {
   title: "Marcelito & Daisy — Wedding Invitation",
@@ -43,6 +44,7 @@ export default function RootLayout({
         <AOSInit />
         <MobileOnlyModal />
         <FloatingPetalsWrapper />
+        <AudioPlayer />
         {children}
       </body>
     </html>

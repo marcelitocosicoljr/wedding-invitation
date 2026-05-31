@@ -150,7 +150,7 @@ export default function DetailsPreview() {
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeIn" }}
           >
             <Image
-              src="/images/wedding/open-envelope1.png"
+              src="/images/wedding/open-envelope1.webp"
               alt="Open envelope"
               fill
               priority
@@ -178,7 +178,7 @@ export default function DetailsPreview() {
               whileTap={{ scale: isOpening ? 1 : 0.99 }}
             >
               <Image
-                src="/images/wedding/clickhere1.png"
+                src="/images/wedding/clickhere1.webp"
                 alt="Click here to view details"
                 fill
                 className="object-contain scale-[2]"

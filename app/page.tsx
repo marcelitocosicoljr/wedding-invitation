@@ -51,7 +51,14 @@ export default function Home() {
     return () => cancelAnimationFrame(rafId);
   }, [mounted, currentSection]);
 
+  const playMusic = () => {
+    if ((window as any).playWeddingMusic) {
+      (window as any).playWeddingMusic();
+    }
+  };
+
   const handleOpenInvitation = () => {
+    playMusic();
     setInvitationOpened(true);
     setCurrentSection((prev) => Math.min(prev + 1, SECTIONS.length - 1));
   };
@@ -67,15 +74,6 @@ export default function Home() {
 
       {/* Custom cursor */}
       <CustomCursor />
-
-      {/* YouTube Music Autoplay */}
-      <iframe
-        width="0"
-        height="0"
-        src="https://www.youtube.com/embed/fu9yk7gCTbc?autoplay=1&muted=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-        allow="autoplay"
-        style={{ display: "none" }}
-      />
 
       {/* Main Container - Full Screen Slides */}
       <main className="relative w-full h-screen overflow-hidden bg-white watercolor-background">

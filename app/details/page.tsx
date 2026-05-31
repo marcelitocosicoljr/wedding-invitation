@@ -853,7 +853,7 @@ export default function DetailsPage() {
             textTransform: "uppercase",
             letterSpacing: "0.08em",
           }}
-          className="text-center px-6 text-[8px] -mt-6"
+          className="text-center px-6 text-[8px] -mt-3"
         >
           FRIENDLY REMINDER: <br /> PLEASE AVOID WEARING WHITE , T-SHIRTS,
           SANDO, SHORTS AND SLIPPERS.
@@ -1209,7 +1209,7 @@ export default function DetailsPage() {
                   }}
                 >
                   The ceremony begins promptly at 2PM, with the entourage walk
-                  starting at 1:30 PM. Please plan to arrive at 1PM to allow
+                  starting at 1:45 PM. Please plan to arrive at 1:30PM to allow
                   ample time for parking and finding your seat.
                 </p>
               </motion.div>
