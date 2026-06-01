@@ -34,7 +34,7 @@ export default function Navigation({ currentSection }: NavigationProps) {
           {/* Logo / Monogram */}
           <motion.div whileHover={{ scale: 1.05 }} className="cursor-pointer">
             <Image
-              src="/images/marsdais.png"
+              src="/images/marsdais.webp"
               alt="M&D"
               width={50}
               height={50}
@@ -114,7 +114,7 @@ export default function Navigation({ currentSection }: NavigationProps) {
           >
             <div className="mb-10 text-center">
               <Image
-                src="/images/marsdais.png"
+                src="/images/marsdais.webp"
                 alt="Marcelito & Daisy"
                 width={100}
                 height={100}

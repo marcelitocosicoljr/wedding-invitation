@@ -314,7 +314,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                   transition={{ duration: 0.55 }}
                 >
                   <Image
-                    src="/images/marsdais.png"
+                    src="/images/marsdais.webp"
                     alt="Marcelito and Daisy monogram"
                     width={116}
                     height={116}
