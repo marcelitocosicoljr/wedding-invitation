@@ -267,7 +267,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                 }}
               >
                 <Image
-                  src="/images/wedding/envelope-final.png"
+                  src="/images/wedding/envelope-final.webp"
                   alt="Envelope"
                   fill
                   priority

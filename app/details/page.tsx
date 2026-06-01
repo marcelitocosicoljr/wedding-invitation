@@ -106,7 +106,7 @@ export default function DetailsPage() {
           <div className="relative h-full w-full">
             <div className="relative -mt-12 h-full w-full pb-20 flex justify-center items-center">
               <Image
-                src="/images/IMG_1960.JPG"
+                src="/images/IMG_1960.webp"
                 alt="Marcelito and Daisy"
                 fill
                 priority
@@ -300,8 +300,8 @@ export default function DetailsPage() {
                 }}
                 className="text-center"
               >
-                With joyful hearts, we&apos;re inviting you to be part of a day
-                woven with love, laughter and forever.
+                With joyful hearts, we invite you to be part of a day woven with
+                love, laughter, and forever.
               </p>
             </div>
             <div
@@ -336,7 +336,7 @@ export default function DetailsPage() {
             data-aos-delay="200"
           >
             <Image
-              src="/images/wedding/final-date2.png"
+              src="/images/wedding/final-date2.webp"
               alt="Marcelito and Daisy moment"
               fill
               className="object-contain scale-[1] -ml-2"
@@ -378,7 +378,7 @@ export default function DetailsPage() {
               data-aos-delay="400"
             >
               <Image
-                src="/images/wedding/wedding-story1.png"
+                src="/images/wedding/wedding-story1.webp"
                 alt="Wedding story details"
                 fill
                 className="object-contain"
@@ -556,7 +556,7 @@ export default function DetailsPage() {
                     data-aos-delay="260"
                   >
                     <Image
-                      src="/images/wedding/wedding-church.png"
+                      src="/images/wedding/wedding-church.webp"
                       alt="Immaculate Conception Cathedral"
                       fill
                       className="object-contain"
@@ -660,7 +660,7 @@ export default function DetailsPage() {
                     data-aos-delay="260"
                   >
                     <Image
-                      src="/images/wedding/reception.png"
+                      src="/images/wedding/reception.webp"
                       alt="Citystate Asturias Hotel Palawan"
                       fill
                       className="object-contain"
@@ -722,7 +722,7 @@ export default function DetailsPage() {
           data-aos-delay="400"
         >
           <Image
-            src="/images/wedding/final-timeline.png"
+            src="/images/wedding/final-timeline.webp"
             alt="Wedding story details"
             fill
             className="object-contain scale-[0.95] -ml-2"
@@ -752,7 +752,7 @@ export default function DetailsPage() {
             data-aos-delay="200"
           >
             <img
-              src="/images/wedding/principal-final.png"
+              src="/images/wedding/principal-final.webp"
               alt="Marcelito and Daisy moment"
               className="object-contain w-full"
             />
@@ -760,7 +760,7 @@ export default function DetailsPage() {
 
           <motion.div className="relative mt-10 h-[540px] w-full rounded-[1.2rem]  sm:h-96">
             <img
-              src="/images/wedding/principal2.png"
+              src="/images/wedding/principal2.webp"
               alt="Marcelito and Daisy moment"
               className="object-contain w-full -mt-[100px]"
             />
@@ -839,7 +839,7 @@ export default function DetailsPage() {
           data-aos-delay="100"
         >
           <Image
-            src="/images/wedding/dress.png"
+            src="/images/wedding/dress.webp"
             alt="Dress Code"
             fill
             className="object-contain p-4"
