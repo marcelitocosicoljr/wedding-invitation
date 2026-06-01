@@ -782,7 +782,7 @@ export default function DetailsPage() {
           data-aos-delay="340"
         >
           <motion.div
-            className="relative h-[550px] w-full rounded-[1.2rem]  sm:h-96"
+            className="relative h-full w-full rounded-[1.2rem]"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
@@ -794,12 +794,12 @@ export default function DetailsPage() {
             />
           </motion.div>
 
-          <motion.div className="relative mt-10 h-[540px] w-full rounded-[1.2rem]  sm:h-96">
+          <motion.div className="relative  h-full w-full rounded-[1.2rem] ">
             <img
               src="/images/wedding/principal2.webp"
               alt="Marcelito and Daisy moment"
               loading="lazy"
-              className="object-contain w-full -mt-[100px]"
+              className="object-contain w-full  -mt-[90px]"
             />
           </motion.div>
         </motion.div>
