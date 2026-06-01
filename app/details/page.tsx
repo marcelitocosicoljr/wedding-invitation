@@ -57,38 +57,59 @@ export default function DetailsPage() {
         className="fixed inset-0"
         animate={{ opacity: [0.22, 0.36, 0.22] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          willChange: "opacity",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+        }}
       >
         <Image
           src="/images/wedding/effects1.webp"
           alt="Golden glow"
           fill
           priority
+          loading="eager"
+          quality={75}
           className="object-cover"
         />
       </motion.div>
 
       <motion.div
         className="fixed -left-10 -bottom-12 h-[42vh] w-[42vh] max-h-[420px] max-w-[420px]"
-        animate={{ y: [0, -8, 0], opacity: [0.25, 0.35, 0.25] }}
+        animate={{ opacity: [0.25, 0.35, 0.25] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          willChange: "opacity",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+        }}
       >
         <Image
           src="/images/wedding/flower-effects1.webp"
           alt="Floral corner"
           fill
+          loading="lazy"
+          quality={70}
           className="object-contain opacity-40"
         />
       </motion.div>
 
       <motion.div
         className="fixed -right-10 -top-12 h-[44vh] w-[44vh] max-h-[460px] max-w-[460px]"
-        animate={{ y: [0, 9, 0], opacity: [0.22, 0.32, 0.22] }}
+        animate={{ opacity: [0.22, 0.32, 0.22] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          willChange: "opacity",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+        }}
       >
         <Image
           src="/images/wedding/flower-effects1.webp"
           alt="Floral corner"
           fill
+          loading="lazy"
+          quality={70}
           className="object-contain -rotate-90 scale-x-[-1] opacity-40"
         />
       </motion.div>
@@ -97,11 +118,10 @@ export default function DetailsPage() {
         <motion.div
           className="mx-auto h-full w-full overflow-hidden px-0 "
           style={{
-            // height: `calc(120dvh - ${imageTopOffset}px)`,
             marginTop: `${imageTopOffset}px`,
           }}
           data-aos="zoom-out"
-          data-aos-duration="2000"
+          data-aos-duration="1000"
         >
           <div className="relative h-full w-full">
             <div className="relative -mt-12 h-full w-full pb-20 flex justify-center items-center">
@@ -110,7 +130,10 @@ export default function DetailsPage() {
                 alt="Marcelito and Daisy"
                 fill
                 priority
-                className="object-cover object-center "
+                loading="eager"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+                className="object-cover object-center"
               />
 
               {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(27,8,8,0.34),transparent_40%),radial-gradient(circle_at_80%_22%,rgba(27,8,8,0.3),transparent_35%)]" /> */}
@@ -339,6 +362,8 @@ export default function DetailsPage() {
               src="/images/wedding/final-date2.webp"
               alt="Marcelito and Daisy moment"
               fill
+              loading="lazy"
+              quality={80}
               className="object-contain scale-[1] -ml-2"
             />
           </motion.div>
@@ -381,6 +406,8 @@ export default function DetailsPage() {
                 src="/images/wedding/wedding-story1.webp"
                 alt="Wedding story details"
                 fill
+                loading="lazy"
+                quality={80}
                 className="object-contain"
               />
             </motion.div>
@@ -441,6 +468,8 @@ export default function DetailsPage() {
                     src={`/images/wedding/invitation/${image}`}
                     alt={`Wedding photo ${index + 1}`}
                     fill
+                    loading="lazy"
+                    quality={75}
                     className="object-cover group-hover:brightness-110 transition-all duration-300"
                   />
                   {index === 3 && (
@@ -559,6 +588,8 @@ export default function DetailsPage() {
                       src="/images/wedding/wedding-church.webp"
                       alt="Immaculate Conception Cathedral"
                       fill
+                      loading="lazy"
+                      quality={80}
                       className="object-contain"
                     />
                   </motion.div>
@@ -663,6 +694,8 @@ export default function DetailsPage() {
                       src="/images/wedding/reception.webp"
                       alt="Citystate Asturias Hotel Palawan"
                       fill
+                      loading="lazy"
+                      quality={80}
                       className="object-contain"
                     />
                   </motion.div>
@@ -725,6 +758,8 @@ export default function DetailsPage() {
             src="/images/wedding/final-timeline.webp"
             alt="Wedding story details"
             fill
+            loading="lazy"
+            quality={80}
             className="object-contain scale-[0.95] -ml-2"
           />
         </motion.div>
@@ -754,6 +789,7 @@ export default function DetailsPage() {
             <img
               src="/images/wedding/principal-final.webp"
               alt="Marcelito and Daisy moment"
+              loading="lazy"
               className="object-contain w-full"
             />
           </motion.div>
@@ -762,6 +798,7 @@ export default function DetailsPage() {
             <img
               src="/images/wedding/principal2.webp"
               alt="Marcelito and Daisy moment"
+              loading="lazy"
               className="object-contain w-full -mt-[100px]"
             />
           </motion.div>
@@ -842,6 +879,8 @@ export default function DetailsPage() {
             src="/images/wedding/dress.webp"
             alt="Dress Code"
             fill
+            loading="lazy"
+            quality={80}
             className="object-contain p-4"
             priority={false}
           />
@@ -1447,6 +1486,8 @@ export default function DetailsPage() {
             src="/images/marsdais.png"
             alt="Marcelito & Daisy Monogram"
             fill
+            loading="lazy"
+            quality={80}
             className="object-contain"
             priority={false}
           />
@@ -1468,7 +1509,7 @@ export default function DetailsPage() {
       {/* QR Code Modal */}
       {showQRCodes && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8"
+          className="fixed inset-0 z-50 flex items-center justify-center px-4"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -1529,6 +1570,8 @@ export default function DetailsPage() {
                     src="/images/wedding/bpi.png"
                     alt="BPI QR Code"
                     fill
+                    loading="lazy"
+                    quality={80}
                     className="object-cover"
                   />
                 </div>
@@ -1558,6 +1601,8 @@ export default function DetailsPage() {
                     src="/images/wedding/palpay.png"
                     alt="GCash QR Code"
                     fill
+                    loading="lazy"
+                    quality={80}
                     className="object-cover"
                   />
                 </div>
@@ -1582,7 +1627,7 @@ export default function DetailsPage() {
       {/* Photo Gallery Modal - Full Width Scrollable */}
       {showPhotoGallery && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8"
+          className="fixed inset-0 z-50 flex items-center justify-center px-4"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -1590,7 +1635,7 @@ export default function DetailsPage() {
           onClick={() => setShowPhotoGallery(false)}
         >
           <motion.div
-            className="relative w-full h-[90vh] max-w-4xl rounded-3xl overflow-hidden flex flex-col"
+            className="relative w-full max-h-[95dvh] max-w-4xl rounded-3xl overflow-hidden flex flex-col"
             style={{
               borderColor: "#f5ddb0",
               backgroundColor: "#3a000b",
@@ -1695,25 +1740,47 @@ export default function DetailsPage() {
                   "12 MARS AND DAISY-10.jpg",
                   "13 MARS AND DAISY.jpg",
                   "13 MARS AND DAISY-7.jpg",
-                ].map((image, index) => (
-                  <motion.div
-                    key={index}
-                    className="relative w-full cursor-pointer hover:opacity-80 transition-opacity"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: index * 0.05 }}
-                    onClick={() => setSelectedImage(image)}
-                  >
-                    <Image
-                      src={`/images/wedding/invitation/${image}`}
-                      alt={`Wedding photo ${index + 1}`}
-                      width={1200}
-                      height={800}
-                      className="w-full h-auto object-contain"
-                      priority={index < 3}
-                    />
-                  </motion.div>
-                ))}
+                ].map((image, index) =>
+                  index < 3 ? (
+                    <motion.div
+                      key={index}
+                      className="relative w-full cursor-pointer hover:opacity-80 transition-opacity"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: index * 0.05 }}
+                      onClick={() => setSelectedImage(image)}
+                    >
+                      <Image
+                        src={`/images/wedding/invitation/${image}`}
+                        alt={`Wedding photo ${index + 1}`}
+                        width={1200}
+                        height={800}
+                        quality={75}
+                        className="w-full h-auto object-contain"
+                        priority
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key={index}
+                      className="relative w-full cursor-pointer hover:opacity-80 transition-opacity"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: index * 0.05 }}
+                      onClick={() => setSelectedImage(image)}
+                    >
+                      <Image
+                        src={`/images/wedding/invitation/${image}`}
+                        alt={`Wedding photo ${index + 1}`}
+                        width={1200}
+                        height={800}
+                        quality={75}
+                        className="w-full h-auto object-contain"
+                        loading="lazy"
+                      />
+                    </motion.div>
+                  ),
+                )}
               </div>
             </div>
 
@@ -1776,6 +1843,7 @@ export default function DetailsPage() {
               alt="Full view photo"
               width={1400}
               height={1000}
+              quality={90}
               className="w-full h-full object-contain"
               priority
             />

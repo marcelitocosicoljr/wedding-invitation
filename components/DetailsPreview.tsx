@@ -52,6 +52,9 @@ export default function DetailsPreview() {
             alt="Golden glow"
             fill
             priority
+            loading="eager"
+            quality={75}
+            sizes="100vw"
             className="object-cover blur-[1px]"
           />
         </motion.div>
@@ -60,12 +63,16 @@ export default function DetailsPreview() {
           className="absolute left-0 -top-36 h-full w-[200px] sm:w-[240px]"
           animate={{
             opacity: [0.12, 0.2, 0.12],
-            scale: [1, 1.02, 1],
           }}
           transition={{
             duration: 10,
             repeat: Infinity,
             ease: "easeIn",
+          }}
+          style={{
+            willChange: "opacity",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
           }}
         >
           <Image
@@ -73,6 +80,9 @@ export default function DetailsPreview() {
             alt="Romantic texture"
             fill
             priority
+            loading="eager"
+            quality={75}
+            sizes="(max-width: 640px) 200px, 240px"
             className="object-cover"
           />
         </motion.div>
@@ -81,7 +91,6 @@ export default function DetailsPreview() {
           className="absolute right-0 top-0 h-full w-[200px] sm:w-[240px]"
           animate={{
             opacity: [0.12, 0.2, 0.12],
-            scale: [1, 1.02, 1],
           }}
           transition={{
             duration: 10,
@@ -89,12 +98,20 @@ export default function DetailsPreview() {
             ease: "easeIn",
             delay: 0.35,
           }}
+          style={{
+            willChange: "opacity",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
         >
           <Image
             src="/images/wedding/effects2.webp"
             alt="Romantic texture right"
             fill
             priority
+            loading="eager"
+            quality={75}
+            sizes="(max-width: 640px) 200px, 240px"
             className="object-cover rotate-180"
           />
         </motion.div>
@@ -109,32 +126,51 @@ export default function DetailsPreview() {
             alt="Golden glow"
             fill
             priority
+            loading="eager"
+            quality={75}
+            sizes="100vw"
             className="object-cover"
           />
         </motion.div>
 
         <motion.div
           className="fixed -left-10 -bottom-12 h-[42vh] w-[42vh] max-h-[420px] max-w-[420px] hidden"
-          animate={{ y: [0, -8, 0], opacity: [0.25, 0.35, 0.25] }}
+          animate={{ opacity: [0.25, 0.35, 0.25] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeIn" }}
+          style={{
+            willChange: "opacity",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
         >
           <Image
             src="/images/wedding/flower-effects1.webp"
             alt="Floral corner"
             fill
+            loading="lazy"
+            quality={70}
+            sizes="(max-width: 640px) 320px, 420px"
             className="object-contain opacity-60"
           />
         </motion.div>
 
         <motion.div
           className="fixed -right-10 -top-20 h-[44vh] w-[44vh] max-h-[460px] max-w-[460px] hidden"
-          animate={{ y: [0, 9, 0], opacity: [0.22, 0.32, 0.22] }}
+          animate={{ opacity: [0.22, 0.32, 0.22] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeIn" }}
+          style={{
+            willChange: "opacity",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
         >
           <Image
             src="/images/wedding/flower-effects1.webp"
             alt="Floral corner"
             fill
+            loading="lazy"
+            quality={70}
+            sizes="(max-width: 640px) 320px, 460px"
             className="object-contain opacity-60 -rotate-90 scale-x-[-1]"
           />
         </motion.div>
@@ -146,14 +182,22 @@ export default function DetailsPreview() {
         >
           <motion.div
             className="relative z-20 -mt-[120px] mx-auto h-[460px] w-full sm:h-[560px] md:h-[850px]"
-            animate={{ y: [0, -4, 0] }}
+            animate={{ opacity: [0.98, 1, 0.98] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeIn" }}
+            style={{
+              willChange: "opacity",
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+            }}
           >
             <Image
               src="/images/wedding/open-envelope2.webp"
               alt="Open envelope"
               fill
               priority
+              loading="eager"
+              quality={85}
+              sizes="(max-width: 640px) 460px, (max-width: 1024px) 560px, 850px"
               className="object-contain drop-shadow-[0_16px_38px_rgba(17,4,10,0.44)]"
             />
 
@@ -181,6 +225,9 @@ export default function DetailsPreview() {
                 src="/images/wedding/clickhere2.webp"
                 alt="Click here to view details"
                 fill
+                priority
+                quality={80}
+                sizes="(max-width: 640px) 72%, 58%"
                 className="object-contain scale-[2]"
               />
             </motion.button>
@@ -194,14 +241,22 @@ export default function DetailsPreview() {
           >
             <motion.div
               className="relative h-[350px] rotate-[-4deg] rounded-[1.25rem] p-3 sm:h-[700px]"
-              animate={{ y: [0, -4, 0] }}
+              animate={{ opacity: [0.95, 1, 0.95] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeIn" }}
+              style={{
+                willChange: "opacity",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+              }}
             >
               <div className="relative h-full w-full rounded-[0.85rem]  ">
                 <Image
                   src="/images/wedding/us1.webp"
                   alt="Marcelito and Daisy portrait one"
                   fill
+                  loading="lazy"
+                  quality={80}
+                  sizes="(max-width: 640px) 350px, 700px"
                   className="object-contain  -ml-[60px] z-10  mt-[15px] "
                 />
               </div>
@@ -209,11 +264,16 @@ export default function DetailsPreview() {
 
             <motion.div
               className="relative h-[330px]  rotate-[5deg] rounded-[1.25rem]  p-3  sm:mt-10 sm:h-[700px]"
-              animate={{ y: [0, -5, 0] }}
+              animate={{ opacity: [0.95, 1, 0.95] }}
               transition={{
                 duration: 6.6,
                 repeat: Infinity,
                 ease: "easeIn",
+              }}
+              style={{
+                willChange: "opacity",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
               }}
             >
               <div className="relative h-full w-full rounded-[0.85rem] ">
@@ -221,6 +281,9 @@ export default function DetailsPreview() {
                   src="/images/wedding/pogi.webp"
                   alt="Marcelito and Daisy portrait two"
                   fill
+                  loading="lazy"
+                  quality={80}
+                  sizes="(max-width: 640px) 330px, 700px"
                   className="object-contain -mt-[135px] ml-[50px] z-10 "
                 />
               </div>

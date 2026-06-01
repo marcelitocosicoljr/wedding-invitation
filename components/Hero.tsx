@@ -40,23 +40,27 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
 
         <motion.div
           className="absolute -left-16 top-10 h-64 w-64 rounded-full blur-[90px]"
-          style={{ background: "rgba(219, 57, 88, 0.25)" }}
+          style={{
+            background: "rgba(219, 57, 88, 0.25)",
+            willChange: "opacity",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
           animate={{
-            x: [0, 40, 0],
-            y: [0, -25, 0],
-            scale: [1, 1.18, 1],
-            opacity: isOpened ? 0 : 1,
+            opacity: isOpened ? 0 : [0.25, 0.35, 0.25],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute -right-24 bottom-8 h-72 w-72 rounded-full blur-[100px]"
-          style={{ background: "rgba(255, 191, 176, 0.2)" }}
+          style={{
+            background: "rgba(255, 191, 176, 0.2)",
+            willChange: "opacity",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
           animate={{
-            x: [0, -35, 0],
-            y: [0, 28, 0],
-            scale: [1, 0.9, 1],
-            opacity: isOpened ? 0 : 1,
+            opacity: isOpened ? 0 : [0.2, 0.3, 0.2],
           }}
           transition={{
             duration: 12,
@@ -75,6 +79,9 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Golden glow"
             fill
             priority
+            loading="eager"
+            quality={75}
+            sizes="100vw"
             className="object-cover blur-[1px]"
           />
         </motion.div>
@@ -96,6 +103,9 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Romantic texture"
             fill
             priority
+            loading="eager"
+            quality={75}
+            sizes="(max-width: 640px) 200px, 240px"
             className="object-cover"
           />
         </motion.div>
@@ -118,6 +128,9 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Romantic texture right"
             fill
             priority
+            loading="eager"
+            quality={75}
+            sizes="(max-width: 640px) 200px, 240px"
             className="object-cover rotate-180"
           />
         </motion.div>
@@ -132,6 +145,9 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Floral corner"
             fill
             priority
+            loading="eager"
+            quality={70}
+            sizes="(max-width: 640px) 320px, 520px"
             className="object-cover opacity-50"
           />
         </motion.div>
@@ -146,6 +162,9 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             alt="Floral corner"
             fill
             priority
+            loading="eager"
+            quality={70}
+            sizes="(max-width: 640px) 320px, 560px"
             className="object-contain -rotate-90 opacity-50 scale-x-[-1]"
           />
         </motion.div>
@@ -203,11 +222,16 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
           >
             <motion.div
               className="relative mx-auto w-[min(98vw,980px)]"
-              animate={{ y: [0, -6, 0] }}
+              animate={{ y: isOpened ? 0 : [0, -6, 0] }}
               transition={{
                 duration: 4.5,
                 repeat: Infinity,
                 ease: "easeInOut",
+              }}
+              style={{
+                willChange: "transform",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
               }}
             >
               <motion.div
@@ -215,10 +239,12 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                 style={{
                   background:
                     "radial-gradient(ellipse at center, rgba(255, 197, 142, 0.38) 0%, rgba(188, 40, 68, 0.24) 45%, rgba(18, 0, 5, 0) 100%)",
+                  willChange: "opacity",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
                 }}
                 animate={{
                   opacity: isOpened ? 0 : [0.55, 0.9, 0.55],
-                  scale: [1, 1.05, 1],
                 }}
                 transition={{
                   duration: 3.4,
@@ -271,6 +297,9 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                   alt="Envelope"
                   fill
                   priority
+                  loading="eager"
+                  quality={85}
+                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 420px, 560px"
                   className="object-cover scale-[1.1]"
                 />
 
@@ -289,6 +318,8 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
                     alt="Marcelito and Daisy monogram"
                     width={116}
                     height={116}
+                    priority
+                    quality={90}
                     className="h-14 w-14 mt-4 -ml-5 object-contain sm:h-16 sm:w-16 md:h-[9rem] md:w-[9rem]"
                   />
                   <p

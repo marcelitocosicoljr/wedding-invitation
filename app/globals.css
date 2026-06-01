@@ -532,3 +532,60 @@ section {
     grid-column: span 1;
   }
 }
+
+/* ─── Android-Specific GPU Acceleration & Rendering Fixes ──────────────────────────── */
+@supports (backdrop-filter: blur(1px)) {
+  /* Chrome/Android */
+  body {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+  }
+}
+
+/* Reduce filter complexity on Android */
+@media (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+  /* Android touch devices */
+
+  /* Reduce blur intensity on animated elements */
+  .blur-\[90px\],
+  .blur-\[100px\],
+  .blur-\[46px\] {
+    will-change: opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Simplify image animations */
+  img {
+    will-change: opacity;
+  }
+
+  /* Reduce animation complexity */
+  @media (prefers-reduced-motion: no-preference) {
+    /* Only use opacity changes, avoid scale/translate on blur elements */
+    .floating-blur {
+      will-change: opacity;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+  }
+}
+
+/* Force GPU acceleration for Hero section on Android */
+@media (max-width: 768px) {
+  section#hero {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* Prevent jank from blurred backgrounds */
+  section#hero > div > div {
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
