@@ -48,7 +48,7 @@ export default function DetailsPreview() {
           transition={{ duration: 7, repeat: Infinity, ease: "easeIn" }}
         >
           <Image
-            src="/images/wedding/effects1.png"
+            src="/images/wedding/effects1.webp"
             alt="Golden glow"
             fill
             priority
@@ -69,7 +69,7 @@ export default function DetailsPreview() {
           }}
         >
           <Image
-            src="/images/wedding/effects2.png"
+            src="/images/wedding/effects2.webp"
             alt="Romantic texture"
             fill
             priority
@@ -91,7 +91,7 @@ export default function DetailsPreview() {
           }}
         >
           <Image
-            src="/images/wedding/effects2.png"
+            src="/images/wedding/effects2.webp"
             alt="Romantic texture right"
             fill
             priority
@@ -105,7 +105,7 @@ export default function DetailsPreview() {
           transition={{ duration: 7, repeat: Infinity, ease: "easeIn" }}
         >
           <Image
-            src="/images/wedding/effects1.png"
+            src="/images/wedding/effects1.webp"
             alt="Golden glow"
             fill
             priority
@@ -119,7 +119,7 @@ export default function DetailsPreview() {
           transition={{ duration: 9, repeat: Infinity, ease: "easeIn" }}
         >
           <Image
-            src="/images/wedding/flower-effects1.png"
+            src="/images/wedding/flower-effects1.webp"
             alt="Floral corner"
             fill
             className="object-contain opacity-60"
@@ -132,7 +132,7 @@ export default function DetailsPreview() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeIn" }}
         >
           <Image
-            src="/images/wedding/flower-effects1.png"
+            src="/images/wedding/flower-effects1.webp"
             alt="Floral corner"
             fill
             className="object-contain opacity-60 -rotate-90 scale-x-[-1]"

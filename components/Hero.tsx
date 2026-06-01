@@ -170,7 +170,7 @@ export default function Hero({ onOpenInvitation }: HeroProps) {
             <h1
               data-aos="fade-right"
               data-aos-delay="180"
-              className="pt-4"
+              className="pt-4 pb-4"
               style={{
                 fontFamily: "'Great Vibes', cursive",
                 color: "#f8e7ba",
