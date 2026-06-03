@@ -57,7 +57,7 @@ export default function LoadingScreen() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <Image
-                src="/images/marsdais.png"
+                src="/images/marsdais.webp"
                 alt="M&D"
                 width={120}
                 height={120}

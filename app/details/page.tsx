@@ -796,7 +796,7 @@ export default function DetailsPage() {
 
           <motion.div className="relative  h-full w-full rounded-[1.2rem] ">
             <img
-              src="/images/wedding/principal2.webp"
+              src="/images/wedding/principal2-final.webp"
               alt="Marcelito and Daisy moment"
               loading="lazy"
               className="object-contain w-full  -mt-[90px]"
