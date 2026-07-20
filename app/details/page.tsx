@@ -1457,7 +1457,7 @@ export default function DetailsPage() {
           >
             Please confirm your attendance by{" "}
             <span style={{ color: "#f5ddb0", fontWeight: "600" }}>
-              July 17, 2026
+              July 23, 2026
             </span>
             <br />
             <br />
